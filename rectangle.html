@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rectangle area</title>
+    
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <main>
+        <header>
+            <h1 class="text-center text-3xl font-semibold flex justify-center ">Rectangle Area</h1>
+        </header>
+     <section class="text-center flex justify-center mt-5">
+        <div id="cng-bg-mediumspringgreen" class="card w-96 bg-base-100  shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="images/rectangle.png" alt="Shoes" class="" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title text-2xl font-bold">Rectangle</h2>
+              <p class="font-medium text-2xl">Area: (A) = width x length</p>
+              <div> 
+                <input id="width" type="text" class="w-20 p-2 texl-xl"> <span class="ml-2 mr-2">cm</span>
+                <input id="height" type="text" class="w-20 p-2 texl-xl"> <span class="ml-2 mr-2">cm</span>
+              </div>
+              
+                <p>Area: <span id="spanArea"></span><span class=" ml-2">Cm<sup>2</sup></span></p>                  
+              <div class="w-full">
+                <button onclick="rectangleArea()" class=" w-full btn btn-primary">Calculate</button>
+              </div>
+            </div>
+          </div>
+     </section>
+    </main>
+    <script>
+      function rectangleArea(){
+        const rectangleWidth = document.getElementById('width').value;
+        const width = parseFloat(rectangleWidth);
+
+        const rectangleHeight = document.getElementById('height').value;
+        const height =parseFloat(rectangleHeight);
+        //calculate formula
+        const area = width*height;
+        // view value display in rectangle section
+        const viewArea = document.getElementById('spanArea');
+        viewArea.innerText = area;
+
+      };
+      document.getElementById('cng-bg-mediumspringgreen').addEventListener('mouseup',function(){
+        const content = document.getElementById('cng-bg-mediumspringgreen');
+        content.style.backgroundColor = 'mediumspringgreen';
+      })
+    </script>
+</body>
+</html>
